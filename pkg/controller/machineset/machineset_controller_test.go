@@ -79,7 +79,7 @@ func TestReconcile(t *testing.T) {
 						MatchLabels: map[string]string{"foo": "bar"},
 					},
 					Template: machinev1beta1.MachineTemplateSpec{
-						ObjectMeta: metav1.ObjectMeta{
+						ObjectMeta: machinev1beta1.ObjectMeta{
 							Labels: map[string]string{"foo": "bar2"},
 						},
 					},
@@ -105,7 +105,7 @@ func TestReconcile(t *testing.T) {
 						MatchLabels: labels,
 					},
 					Template: machinev1beta1.MachineTemplateSpec{
-						ObjectMeta: metav1.ObjectMeta{
+						ObjectMeta: machinev1beta1.ObjectMeta{
 							Labels: labels,
 						},
 					},
