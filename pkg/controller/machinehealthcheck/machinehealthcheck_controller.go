@@ -239,7 +239,7 @@ func isAllowedRemediation(mhc *mapiv1.MachineHealthCheck) bool {
 	}
 	maxUnhealthy, err := getValueFromIntOrPercent(mhc.Spec.MaxUnhealthy, derefInt(mhc.Status.ExpectedMachines), false)
 	if err != nil {
-		glog.Errorf("%s: error decoding maxUnhealthy, remediation won't be allowed: %v", namespacedName(mhc), err)
+		glog.Errorf("%s: error decoding maxUnhealthy, remediation won't be allowed: invalid value for maxUnhealthy %q: value should be either integer or percent", namespacedName(mhc), mhc.Spec.MaxUnhealthy)
 		return false
 	}
 
